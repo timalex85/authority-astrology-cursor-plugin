@@ -1,0 +1,15 @@
+{
+  "name": "authority-astrology",
+  "displayName": "Authority Astrology",
+  "version": "1.0.0",
+  "description": "Explore birth charts, transits and relationship charts with Swiss Ephemeris calculations. Preserve birth-time certainty and use your saved profiles with permission.",
+  "author": {
+    "name": "Zilla Apps",
+    "email": "support@authorityastrology.com"
+  },
+  "homepage": "https://authorityastrology.com/developers",
+  "repository": "https://github.com/timalex85/authority-astrology-cursor-plugin",
+  "license": "MIT",
+  "logo": "assets/icon.svg",
+  "keywords": ["astrology", "birth-chart", "transits", "swiss-ephemeris"]
+}

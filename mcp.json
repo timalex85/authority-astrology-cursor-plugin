@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "authority-astrology": {
+      "url": "https://authorityastrology.com/mcp/claude"
+    }
+  }
+}
