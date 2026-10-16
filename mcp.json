@@ -1,7 +1,16 @@
 {
   "mcpServers": {
     "authority-astrology": {
-      "url": "https://authorityastrology.com/mcp/claude"
+      "url": "https://authorityastrology.com/mcp/claude",
+      "auth": {
+        "CLIENT_ID": "44227848-8674-476a-964a-67acc4487985",
+        "scopes": [
+          "account:read",
+          "profiles:read",
+          "charts:read",
+          "charts:write"
+        ]
+      }
     }
   }
 }

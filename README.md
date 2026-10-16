@@ -35,44 +35,69 @@ must be repeated after connecting before they can be saved.
 ## Install and connect
 
 This repository is a standalone Cursor plugin package. Marketplace availability
-depends on review; the existence of this repository does not mean it is
-approved.
+depends on review; publication of the repository is not approval.
 
 For local testing in Cursor, copy this repository's contents (including
 `.cursor-plugin`) into `~/.cursor/plugins/local/authority-astrology`, then
-restart Cursor or run **Developer: Reload Window**. Open **Customize** and
-verify that the skills and MCP server appear. Local imports must be allowed by
-your organization. See
-[Cursor's plugin installation documentation](https://cursor.com/docs/plugins).
+restart Cursor. Open **Customize** and verify that the skills and MCP server
+appear. Local imports must be allowed by your organization. See
+[Cursor's plugin documentation](https://cursor.com/docs/plugins).
+
+This package configures OAuth explicitly. Cursor may request an account
+connection when the plugin is enabled, including before public
+searches/calculations. Sign in on Authority Astrology, review the permissions
+and approve only the intended account. Account connection is required for the
+package's private workflows.
 
 Grok Bot uses the same plugin ecosystem. Once available, install through its
-plugin interface; follow
-[Grok Bot's setup guide](https://cursor.com/docs/grok-bot/get-started) for
-account and client requirements. Do not install the same MCP server twice
-through both a plugin and a manual configuration.
+plugin interface; see
+[Grok Bot setup](https://cursor.com/docs/grok-bot/get-started) for
+account/client requirements. Actual standalone Grok Bot verification is separate
+from Cursor verification.
 
-For a client that supports a custom remote MCP server, use:
+The package's MCP configuration is:
 
 ```json
 {
   "mcpServers": {
     "authority-astrology": {
-      "url": "https://authorityastrology.com/mcp/claude"
+      "url": "https://authorityastrology.com/mcp/claude",
+      "auth": {
+        "CLIENT_ID": "44227848-8674-476a-964a-67acc4487985",
+        "scopes": [
+          "account:read",
+          "profiles:read",
+          "charts:read",
+          "charts:write"
+        ]
+      }
     }
   }
 }
 ```
 
-The `/claude` suffix is the existing OAuth-compatible transport endpoint, not a
-restriction on the client. It supports public tools without sign-in and an HTTP
-401 OAuth challenge for account tools. The original OpenAI/Muse endpoints and
-packages remain separate.
+The client ID identifies this public OAuth application; it is not a password or
+secret. No client secret, token, authorization header or user credential is
+bundled. The registered callbacks are Cursor's HTTPS callback and local callback
+paths; S256 PKCE is mandatory. The host stores each user's tokens after consent
+and refreshes them normally. Disconnect through the host's connector controls;
+reconnect when consent expires or is revoked.
 
-When an account tool is requested, use the host's OAuth flow and sign in on
-Authority Astrology. The server supports dynamic client registration, S256 PKCE
-and refresh-token rotation. No API key, password, fixed client secret or
-authorization header is included in this package. Disconnect using the host's
-connector controls; reconnect if authorization expires or is revoked.
+The `/claude` suffix is the existing OAuth-compatible endpoint, not a client
+restriction. The original OpenAI/Muse and Claude packages are unchanged.
+Explicit [static OAuth configuration](https://cursor.com/docs/mcp) avoids a
+Cursor 3.24.18 behavior in which reconnecting an anonymous server can report
+success without obtaining an account token.
+
+### Anonymous access
+
+The service still supports public tools without sign-in. To use only public
+features in a custom MCP client, configure
+`https://authorityastrology.com/mcp/claude` as a URL-only server without this
+package's `auth` object. Do not enable that manual server alongside the full
+plugin. In Cursor 3.24.18, that anonymous configuration works for public calls
+but does not reliably upgrade to account access; use this full package for
+private workflows.
 
 ## Reviewer test plan
 
