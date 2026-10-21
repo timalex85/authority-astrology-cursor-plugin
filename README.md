@@ -1,36 +1,34 @@
-# Authority Astrology for Cursor and Grok Bot
+# Authority Astrology: Birth Chart Calculator
 
-Explore birth charts, transits and relationship charts with Swiss Ephemeris
-calculations. Preserve birth-time certainty and use your saved profiles with
-permission.
+For Cursor and Grok Bot.
 
-![Authority Astrology](assets/icon.svg)
+<img src="assets/icon.png" alt="Authority Astrology: Birth Chart Calculator icon" width="72" height="72">
 
-Calculate complete raw birth charts, aspects, houses, transits and returns with
-Swiss Ephemeris. Preserve birth-time uncertainty and use your own saved profiles
-with permission.
+Your birth chart, relationships and planetary cycles, explored with your assistant with Swiss Ephemeris calculations.
 
-Calculate from supplied birth or event details without sign-in. The server
-returns complete raw Swiss Ephemeris data; your assistant provides any
-explanation. Known, approximate and unknown birth times remain distinct. Large
-results include a manifest and can be retrieved in pages. There is no
-server-generated interpretation, score, report purchase or marketing action.
+![Authority Astrology: Birth Chart Calculator: illustrated feature overview](assets/feature-overview.png)
 
-Connect an Authority Astrology account only when you ask to read saved people or
-save and retrieve new raw charts. Existing account permissions apply. Older
-saved website-chart formats are outside this integration. Anonymous calculations
-must be repeated after connecting before they can be saved.
+## What you can do
 
-## Examples
+| Explore | What you can do |
+| --- | --- |
+| Birth charts | Calculate planets, signs, houses, angles and aspects from your birth details. |
+| Relationships | Compare two charts with synastry, or calculate a composite chart. |
+| Timing and cycles | Explore transits, secondary progressions, and solar, lunar or Saturn returns. |
+| Places | Calculate relocated charts and astrocartography. |
+| More chart techniques | Calculate horary and electional charts; look up eclipses, sky events and celestial positions. |
+| Your saved details | Connect your account to choose saved people, retrieve raw charts and save a new calculation when you ask. |
 
-- "Calculate my natal chart for 1 January 2000 at noon in Greenwich, London.
-  Confirm the place first."
-- "I know my birth date and city but not my birth time. Explain what can and
-  cannot be calculated."
-- "Compare two supplied natal charts and show all returned cross-chart aspects,
-  with their source layers."
-- "Use my saved birth profile and calculate my next solar return." Sign in when
-  prompted and select the intended person.
+## Try asking
+
+- “Calculate my birth chart and explain my Sun, Moon, rising sign and major aspects. Ask me for the details you need.”
+- “Compare our birth charts with synastry and explain the cross-chart aspects.”
+- “What transits affect my natal chart this month?”
+- “Use my saved birth profile to calculate my next solar return.”
+
+This package can prompt for an account connection when enabled. Public service endpoints also support anonymous discovery; connected workflows use your existing permissions.
+
+Swiss Ephemeris supplies chart calculations; your assistant supplies any interpretation. Exact, approximate and unknown birth times stay distinct. Astrology is for reflection and entertainment. The visual illustrates a synthetic sample chart for 1 January 2000 at 12:00 UTC in Greenwich.
 
 ## Install and connect
 
@@ -52,8 +50,7 @@ package's private workflows.
 Grok Bot uses the same plugin ecosystem. Once available, install through its
 plugin interface; see
 [Grok Bot setup](https://cursor.com/docs/grok-bot/get-started) for
-account/client requirements. Actual standalone Grok Bot verification is separate
-from Cursor verification.
+account/client requirements.
 
 The package's MCP configuration is:
 

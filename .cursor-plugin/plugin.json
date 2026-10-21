@@ -1,8 +1,8 @@
 {
   "name": "authority-astrology",
-  "displayName": "Authority Astrology",
-  "version": "1.0.1",
-  "description": "Explore birth charts, transits and relationship charts with Swiss Ephemeris calculations. Preserve birth-time certainty and use your saved profiles with permission.",
+  "displayName": "Authority Astrology: Birth Chart Calculator",
+  "version": "1.0.2",
+  "description": "Calculate your birth chart and explore planets, houses and aspects with Swiss Ephemeris. Compare relationships with synastry and composite charts; explore transits, progressions, solar, lunar and Saturn returns, relocation and astrocartography. Ask your assistant to explain the results in plain language. Start with your birth details, or connect to use saved profiles and save new charts. Exact, approximate and unknown birth times are handled explicitly.",
   "author": {
     "name": "Zilla Apps",
     "email": "support@authorityastrology.com"
@@ -10,6 +10,15 @@
   "homepage": "https://authorityastrology.com/developers",
   "repository": "https://github.com/timalex85/authority-astrology-cursor-plugin",
   "license": "MIT",
-  "logo": "assets/icon.svg",
-  "keywords": ["astrology", "birth-chart", "transits", "swiss-ephemeris"]
+  "logo": "assets/icon.png",
+  "keywords": [
+    "astrology",
+    "birth-chart-calculator",
+    "natal-chart",
+    "synastry",
+    "transits",
+    "solar-return",
+    "astrocartography",
+    "Swiss-Ephemeris"
+  ]
 }
